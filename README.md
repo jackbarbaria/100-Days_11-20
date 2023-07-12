@@ -7,7 +7,7 @@ This Day 11 Capstone was tough and took me several days to complete!! This was t
 
 This project stretched my debugging skills. There were several frustrating moments after testing what I wrote, my program would be stuck in an infinite loop. To help debug my code, I used the [Python Tutor](https://pythontutor.com/render.html#mode=edit) tool to vizualize the code execution. 
 
-Test your luck with [Blackjack](https://replit.com/@JackBarbaria/Day-10-Calculator?v=1)!
+Test your luck with [Blackjack](https://replit.com/@JackBarbaria/Day-11-Blackjack-Capstone?v=1)!
 
 <br />
 <img src="https://i.imgur.com/xMHtXr2.jpg" height="40%" width="40%" alt="Blackjack"/>

@@ -10,7 +10,7 @@ This project stretched my debugging skills. There were several frustrating momen
 Test your luck with [Blackjack](https://replit.com/@JackBarbaria/Day-11-Blackjack-Capstone?v=1)!
 
 <br />
-<img src="https://i.imgur.com/xMHtXr2.jpg" height="40%" width="40%" alt="Blackjack"/>
+<img src="https://i.imgur.com/xMHtXr2.jpg" height="60%" width="60%" alt="Blackjack"/>
 <br />
 
 ```python
@@ -125,5 +125,69 @@ while newgame == "y":
     computer_play()
     endgame(calc_score(player_hand), calc_score(computer_hand))
 ```
+## Day 12 - Scope
+The Day 12 lesson explained the concepts of **namespace** and the difference between **global scope** and **local scope**.
 
+A **namespace** in Python is a system that keeps track of names (such as variable names, function names, and object names) and their associated objects. It acts like a dictionary that maps names to their corresponding objects. It helps organize and distinguish between different names in a program, ensuring they can be accessed and used without conflicts.
+
+When you define a variable in the **global scope**, or main body of the Python code, it means that the variable can be accessed and used from any part of your program, regardless of the specific namespace or function you are in.
+
+When you define a variable inside a function, it has a **local scope**, which means it can only be accessed and used within that specific function. They are not available in other namespaces or functions unless explicitly passed or returned from the function.
+
+The challenge today was to create a number guessing game. This was the first challenge in the 100 Days of Code series that provided no hints or starting code. I was provided with a list of objectives and watched a video that showed how the completed program should behave. This was a fun challenge.
+
+<br />
+<img src="https://i.imgur.com/RaxA3hA.jpg" height="60%" width="60%" alt="Blackjack"/>
+<br />
+
+Click [Number Guessing Game](https://replit.com/@JackBarbaria/Day-12-Guess-the-Number?v=1) and give it a go!
+
+```python
+#Number Guessing Game Objectives:
+
+# Include an ASCII art logo.
+# Allow the player to submit a guess for a number between 1 and 100.
+# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
+# If they got the answer correct, show the actual answer to the player.
+# Track the number of turns remaining.
+# If they run out of turns, provide feedback to the player. 
+# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+
+from art import logo
+import random
+
+def difficulty_level():
+  level = input("Choose a difficulty. Type 'easy' or 'hard': ")
+  if level == 'easy':
+    return 10
+  elif level == 'hard':
+    return 5
+
+print(logo)
+print("Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
+secret_number = random.randint(1, 100)
+
+winner = False
+attempts = difficulty_level()
+while attempts > 0:
+
+  print(f"You have {attempts} attempts remaining to guess the number.")
+  guess = int(input("Make a guess: "))
+  if guess == secret_number:
+    attempts = 0
+    winner = True
+  else:
+    attempts -= 1
+    if guess < secret_number:
+      print("Too low.")
+    elif guess > secret_number:
+      print("Too high.")
+    if attempts > 0:
+      print("Guess again.")
+
+if winner == True:
+  print(f"You got it! The answer was {secret_number}.")
+else:
+  print("You've run out of guesses, you lose.")
+```
  
